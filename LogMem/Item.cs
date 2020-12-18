@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace LogMem
@@ -24,7 +25,9 @@ namespace LogMem
         public Item(string line)
         {
             var tmp = line.Split('\t').Where(s => !string.IsNullOrEmpty(s)).ToArray();
-
+            Type = tmp?[0]?.IndexPref().ToLevent()??Levent.None;
+            Date = DateTime.ParseExact(tmp[1], "T", new DateTimeFormatInfo());
+            //Message = tmp.t
         }
 
         public override string ToString()

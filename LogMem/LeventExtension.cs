@@ -15,6 +15,12 @@ namespace LogMem
                 _pref.Add(value.ToPref());
         }
 
+        public static Levent ToLevent(this int index)
+        {
+            var t = Enum.GetValues(typeof(Levent));
+            if (index < 0 || index > t.Length) return Levent.None;
+            return (Levent)t.GetValue(index);
+        }
         public static int IndexPref(this string prefix)
         {
             prefix = prefix.Replace("[", null).Replace("]", null).Trim();
