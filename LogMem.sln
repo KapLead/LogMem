@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30803.129
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogMem", "LogMem\LogMem.csproj", "{692DDDC7-EF9D-4F36-BC34-349A8FB5911B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogMem", "TestLogMem\TestLogMem.csproj", "{853E0D22-8E61-408B-BC07-D782A431C45B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{692DDDC7-EF9D-4F36-BC34-349A8FB5911B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{692DDDC7-EF9D-4F36-BC34-349A8FB5911B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{692DDDC7-EF9D-4F36-BC34-349A8FB5911B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{853E0D22-8E61-408B-BC07-D782A431C45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853E0D22-8E61-408B-BC07-D782A431C45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853E0D22-8E61-408B-BC07-D782A431C45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853E0D22-8E61-408B-BC07-D782A431C45B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

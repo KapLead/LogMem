@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Globalization;
 using System.Linq;
 
@@ -30,13 +31,15 @@ namespace LogMem
             Date = DateTime.ParseExact(tmp[1], "T", new DateTimeFormatInfo());
             List<string> t = new List<string>();
             if(tmp.Length>2)
-            for (int i = 2; i < tmp.Length; i++) t.Add(tmp[i]);
-            Message = t.ToArray();
+                Message = tmp[2].Split(new []{'|'}, StringSplitOptions.RemoveEmptyEntries).ToArray();
         }
 
         public override string ToString()
         {
-            return $"[{Type.ToPref()}]\t{Date:T}\t{Message.Aggregate(string.Empty, (current, s) => (current == null ? "" : "\r\n\t\t") + current)}";
+            string msg = Message.Aggregate<string, string>(null, (current, s) => current + ((current == null ? "" : "|") + s));
+            if (msg.EndsWith("|"))
+                msg = msg.Substring(0, msg.Length - 2);
+            return $"[{Type.ToPref()}]\t{Date:T}\t{msg?.Trim()}";
         }
     }
 }
